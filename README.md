@@ -1,11 +1,10 @@
 Lenguajes Paradigmas de la Programación
-Práctica Desarrollo dirigido por pruebas (TDD) #6
+Programación Orientada a Objetos. Práctica #7
 
-Andrea Pérez Quintana
 Sofía Pizarro Arbelo
 
 
-# Bib
+# LinkedList
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/bib`. To experiment with that code, run `bin/console` for an interactive prompt.
 

@@ -1,5 +1,3 @@
-#Sofía Pizarro Arbelo
-
 require "bib/version"
 
 class Bib

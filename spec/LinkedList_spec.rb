@@ -48,7 +48,7 @@ describe Bib do
         it "Aceder al último elemento" do
             @L.end.value.should eq @object3
         end
-        it "SInsertar más de un elemento" do
+        it "Insertar más de un elemento" do
             @L.add(@object6)
         end
     end

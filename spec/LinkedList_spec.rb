@@ -30,26 +30,17 @@ describe Bib do
     
     describe "Con node se puede:" do
         
-        it "Crear nodo" do
+        it "Saber si se ha creado un nodo o está vacio (nil)" do
             @L.head.should_not eq nil
         end
-        it "Obtener valor del nodo" do
+        it "Obtener valor del primer nodo" do
             @L.head.value.to_s.should eq @object2.to_s
         end
-        it "Apuntar al siguiente nodo" do
+        it "Si al nodo al que apunta (next) no es nil" do
             @L.head.next.should eq nil
         end
-    end
-    
-    describe "Con linkedList se puede:" do
-        it "Acceder al primer valor" do
-            @L.head.value.should eq @object2
-        end
-        it "Aceder al último elemento" do
+        it "Obtener valor del último elemento" do
             @L.end.value.should eq @object3
-        end
-        it "Insertar más de un elemento" do
-            @L.add(@object6)
         end
     end
 end

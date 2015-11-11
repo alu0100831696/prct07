@@ -1,15 +1,16 @@
 require "bib/version"
 require "bib/bib_cod"
 
-class LinkedList
-		attr_reader  :head, :end
-		
-		Node = Struct.new :value, :next
 
+	Node = Struct.new :value, :next #Clase Nueva
+
+class LinkedList
+		attr_reader  :head, :fin
+		
 		def initialize (bib)
 			if bib.instance_of? Bib
 				@head = Node.new(bib, nil)
-				@end = nil
+				@fin = nil
 			end
 		end
 		
@@ -17,14 +18,14 @@ class LinkedList
 			if value.instance_of? Bib #Una
 				if @head == nil
 					@head = Node.new(value, nil)
-					@end = nil
+					@fin = nil
 				else
-					if @end == nil
-						@end = Node.new(value, nil)
+					if @fin == nil
+						@fin = Node.new(value, nil)
 					else
-						aux = @end
-						@end = Node.new(value, nil)
-						aux.next = @end
+						aux = @fin
+						@fin = Node.new(value, nil)
+						aux.next = @fin
 					end
 				end
 			elsif value.instance_of? Array #Varias

@@ -4,6 +4,8 @@ require 'bib/LinkedList'
 
 describe Bib do
       before :each do
+          
+         
         @object2 = Bib.new(['Dave Thomas', 'Andy Hunt', 'Chad Fowler' ], 
         'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide', 
         '(The Facets of Ruby)',  'Pragmatic Bookshelf', '4 edition', 
@@ -21,26 +23,40 @@ describe Bib do
         RSpec, Cucumber, and Friends', '(The Facets of Ruby)', 'Pragmatic Bookshelf',
         '1 edition', '(December 25, 2010)', ['ISBN-10: 1934356379', 'ISBN-13: 978-1934356371'])
         
-        @object6 = Bib.new('Richard E. Silverman', 'Git Pocket Guide', nil, 'O’Reilly Media', 
-        '1 edition', '(August 2, 2013)', ['ISBN-10: 1449325866', 'ISBN-13: 978-1449325862'])
         
-        @L= LinkedList.new @object2
-        @L.add(@object3)
+         @L= LinkedList.new(@object2) 
+          @L.add(@object3)
+          
+        @object = Array.new(2)
+        @object = [@object4, @object5]
+     
+         @L.add(@object)
+         
     end
     
     describe "Con node se puede:" do
         
+       
+        it "Comprobar no vacío" do
+              expect(@L).not_to be 0
+        end
+        
+        it "Añadir array de nodos" do
+            
+            @L.add(@object)
+        end 
+        
         it "Saber si se ha creado un nodo o está vacio (nil)" do
-            @L.head.should_not eq nil
+            expect(@L.head).not_to be nil
         end
         it "Obtener valor del primer nodo" do
-            @L.head.value.to_s.should eq @object2.to_s
+            expect(@L.head.value.to_s).to eq @object2.to_s
         end
         it "Si al nodo al que apunta (next) no es nil" do
-            @L.head.next.should eq nil
+            expect(@L.head.next).to eq nil
         end
         it "Obtener valor del último elemento" do
-            @L.end.value.should eq @object3
+            expect(@L.fin.value).to eq @object5
         end
     end
 end
